@@ -1,7 +1,7 @@
 const Home = () => {
     return(
         <>
-            <p>menu311</p>
+            <p>LOOK 直播</p>
         </>
     );
 }
