@@ -1,7 +1,7 @@
 const Home = () => {
     return(
         <>
-            <p>menu11</p>
+            <p style={{ textAlign: 'center' }}>我喜欢的音乐</p>
         </>
     );
 }

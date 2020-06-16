@@ -57,9 +57,9 @@ export default function request({ url, method, headers, params, data, processDat
                 response.json().then(ret => {
                     let code = Number(ret.code)
                     if (code === SUCCESS_CODE) {
-                        resolve({ status: code, data: ret.result});
+                        ret.result ? resolve({ status: code, data: ret.result }) : resolve(ret);
                     } else {
-                        reject({ status: code, describe: ret.msg, message: ret.msg, response: ret.result });
+                        reject(ret);
                     }
                 }, error => {
                     reject({ status: response.status, describe: response.statusText, message: error.msg });

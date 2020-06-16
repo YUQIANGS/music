@@ -1,7 +1,7 @@
 const Home = () => {
     return(
         <>
-            <p>LOOK 直播</p>
+            <p style={{ textAlign: 'center' }}>LOOK 直播</p>
         </>
     );
 }

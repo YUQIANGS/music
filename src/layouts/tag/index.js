@@ -4,14 +4,14 @@ import { history } from 'umi';
 
 const TagGroup = ({ tagList, dispatch }) => {
     const hadnleClose = (e, item) => {
-        e.preventDefault();
+        e.stopPropagation(); 
         dispatch({
             type: 'account/delMenuTag',
             payload: item
-        })
+        })    
     }
-    const handleClick = (item) => {
-        history.push(item.path)
+    const handleClick = (path) => {
+        history.push('/' + path)
     }
     return(
         <>
@@ -23,7 +23,7 @@ const TagGroup = ({ tagList, dispatch }) => {
                         data={item}
                         closable 
                         onClose={(e) => { hadnleClose(e, item) }}
-                        onClick={() => { handleClick(item) }}
+                        onClick={() => { handleClick(item.path) }}
                     >
                         {item.title}
                     </Tag>

@@ -7,7 +7,8 @@
     "prettier": "prettier --write '**/*.{js,jsx,tsx,ts,less,md,json}'",
     "test": "umi-test",
     "test:coverage": "umi-test --coverage",
-    "icon": "node ./icon.js"
+    "icon": "node ./icon.js",
+    "packager": "electron-packager ./ music --platform=win32 --arch=ia32 --out ./app --version 1.4.0 --overwrite --icon=./app/img/icon/icon.ico"
   },
   "gitHooks": {
     "pre-commit": "lint-staged"
@@ -35,5 +36,8 @@
   },
   "main": "./main.js",
   "homepage": ".",
-  "DEV": true
+  "DEV": true,
+  "devDependencies": {
+    "electron-packager": "^14.2.1"
+  }
 }

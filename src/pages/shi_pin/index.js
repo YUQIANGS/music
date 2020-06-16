@@ -1,9 +1,22 @@
-const Home = () => {
-    return(
-        <>
-            <p>menu311</p>
-        </>
-    );
+import React, { Component } from 'react';
+import { connect } from 'dva';
+
+class Index extends Component {
+    constructor() {
+        super(...arguments);
+    }
+    componentDidMount() {
+        this.props.dispatch({
+            type: 'shi_pin/getAllVideo'
+        })
+    }
+    render() {
+        return (
+            <>
+                <p style={{ textAlign: 'center' }}>视频</p>
+            </>
+        );
+    }
 }
 
-export default Home;
+export default connect()(Index);

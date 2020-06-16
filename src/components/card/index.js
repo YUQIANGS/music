@@ -39,10 +39,10 @@ class Card extends Component {
         })
     }
     render() {
-        const { title, img, tip, className, mark } = this.props;
+        const { title, img, tip, className, mark, onClick } = this.props;
         const { markClass, tipStyle } = this.state;
         return (
-            <div className={`${styles.card} ${className}`}>
+            <div className={`${styles.card} ${className}`} onClick={onClick}>
                 <div className={styles.imgBox} onMouseEnter={this.handleMouseEnter} onMouseLeave={this.handleMouseLeave}>
                     <div className={markClass} ref='mark'>{mark}</div>
                     <img src={img} className={styles.img} />

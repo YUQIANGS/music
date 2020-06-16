@@ -1,7 +1,7 @@
 const Home = () => {
     return(
         <>
-            <p>menu11</p>
+            <p style={{ textAlign: 'center' }}>下载管理</p>
         </>
     );
 }

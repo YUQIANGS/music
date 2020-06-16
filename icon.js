@@ -14,7 +14,7 @@ const FONT_FILE_TYPE_TTF = 'ttf'
 const FONT_FILE_TYPE_SVG = 'svg'
  
 const icon = [{  // 自动维护图标
-  aliUrl: '//at.alicdn.com/t/font_1877713_ey3tgyw97wt.css', // 暂时只支持使用阿里巴巴图标库
+  aliUrl: '//at.alicdn.com/t/font_1877713_oyk9q7n9kr9.css', // 暂时只支持使用阿里巴巴图标库
   dir: './src/assets/fonts'  // 公共图标
 }]
  

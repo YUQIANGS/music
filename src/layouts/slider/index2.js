@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import { Menu } from 'antd';
 import { history } from 'umi';
 import { connect } from 'dva';
+import { withRouter } from 'react-router-dom';
 
 class LeftMenu extends Component {
     constructor() {
@@ -15,13 +15,17 @@ class LeftMenu extends Component {
             type: 'account/saveMenuTag',
             payload: item
         })
-        history.push(item.path);
+        history.push('/' + item.path);
     };
     componentDidMount() {
         fetch('/api/userInfo').then(response => response.json()).then(res => {
             if(res && res.status == 200) {
                 this.setState({
                     menuList: res.data.sysMenu
+                })
+                this.props.dispatch({
+                    type: 'account/saveMenuTag',
+                    payload: res.data.sysMenu[0].children[0]
                 })
             }
         })
@@ -43,8 +47,9 @@ class LeftMenu extends Component {
             )
 
         } else {
+            const path = this.props.location.pathname.split('/')[1];
             return (
-                <li key={item.id} onClick={() => { this.handleClick(item) }}>
+                <li key={item.id} onClick={() => { this.handleClick(item) }} className={item.path == path ? 'subMenu_active' : null}>
                     <i className={`icon iconfont ${item.icon}`}></i>&#12288;{item.title}
                 </li>
             )
@@ -68,4 +73,4 @@ class LeftMenu extends Component {
     }
 }
 
-export default connect()(LeftMenu);
+export default connect()(withRouter(LeftMenu));

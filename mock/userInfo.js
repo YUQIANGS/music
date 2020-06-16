@@ -73,6 +73,13 @@ const api = {
                 }
             ]
         }
+    },
+    '/api/login': {
+        status: 200,
+        msg: 'success',
+        data: {
+            token: 'kkkkkk'
+        }
     }
 }
 

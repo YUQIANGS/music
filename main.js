@@ -14,7 +14,7 @@ function createWindow() {
     // and load the index.html of the app.
     //判断是否是开发模式
     if (pkg.DEV) {
-        win.loadURL('http://localhost:8000')
+        win.loadURL('http://localhost:8002')
     } else {
         win.loadURL(url.format({
             pathname: path.join(__dirname, './build/index.html'),
